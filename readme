@@ -1,0 +1,49 @@
+Projeto Banco
+Este projeto simula um sistema bancário simples que permite ao usuário realizar depósitos, saques e visualizar o extrato da conta. O código é escrito em Python e utiliza a biblioteca PrettyTable para formatar a tabela de histórico de transações.
+
+Funcionalidades
+
+Depositar: Permite ao usuário adicionar fundos à conta.
+Sacar: Permite ao usuário retirar fundos da conta, com algumas restrições.
+Extrato: Exibe o saldo atual e o histórico de transações.
+Sair: Encerra o programa.
+Como Usar
+Instale as dependências necessárias:
+Certifique-se de ter a biblioteca PrettyTable instalada. Você pode instalá-la usando pip:
+
+    pip install prettytable
+
+Execute o programa:
+Salve o código em um arquivo, por exemplo, banco.py, e execute-o com Python:
+
+    python banco.py
+
+Interaja com o menu:
+Você verá o seguinte menu de opções:
+
+    [d] Depositar
+    [s] Sacar
+    [e] Extrato
+    [q] Sair
+
+    =>
+
+Digite a letra correspondente à operação que deseja realizar e siga as instruções fornecidas pelo programa.
+
+Detalhes das Funcionalidades
+
+Depositar: Quando a opção d é selecionada, o programa solicitará que você insira o valor do depósito.
+O valor deve ser maior que R$0. Valores inválidos serão rejeitados.
+
+Sacar: Quando a opção s é selecionada, o programa solicitará que você insira o valor do saque.
+
+Restrições: O valor do saque deve ser maior que R$0 e menor ou igual a R$500.
+O número de saques permitidos por dia é limitado a 3.
+Você não pode sacar mais do que o saldo disponível na conta.
+
+Extrato: Quando a opção e é selecionada, o programa exibirá o saldo atual e o histórico de transações formatado em uma tabela.
+
+Sair: Quando a opção q é selecionada, o programa será encerrado.
+
+Contribuições
+Sinta-se à vontade para abrir issues e enviar pull requests para melhorar este projeto. Feedback e sugestões são sempre bem-vindos!
