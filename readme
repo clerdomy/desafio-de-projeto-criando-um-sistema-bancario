@@ -1,49 +1,74 @@
-Projeto Banco
-Este projeto simula um sistema bancário simples que permite ao usuário realizar depósitos, saques e visualizar o extrato da conta. O código é escrito em Python e utiliza a biblioteca PrettyTable para formatar a tabela de histórico de transações.
+# Sistema de Banco em Python
 
-Funcionalidades
+Este projeto é um sistema simples de banco em Python, que permite a criação de contas correntes para múltiplos usuários, e oferece funcionalidades básicas como depósito, saque e exibição de extrato.
 
-Depositar: Permite ao usuário adicionar fundos à conta.
-Sacar: Permite ao usuário retirar fundos da conta, com algumas restrições.
-Extrato: Exibe o saldo atual e o histórico de transações.
-Sair: Encerra o programa.
-Como Usar
-Instale as dependências necessárias:
-Certifique-se de ter a biblioteca PrettyTable instalada. Você pode instalá-la usando pip:
+## Funcionalidades
 
+- Cadastro de usuários com nome e CPF.
+- Cada usuário tem uma conta corrente com saldo, limite de saque e um extrato de transações.
+- Realização de depósitos e saques.
+- Exibição do extrato da conta com histórico de transações.
+
+## Como usar
+
+1. Clone o repositório para sua máquina local.
+2. Certifique-se de ter o Python instalado.
+3. Instale as dependências necessárias, executando o seguinte comando:
+    ```bash
     pip install prettytable
+    ```
+4. Execute o script `main.py` para iniciar o sistema:
+    ```bash
+    python main.py
+    ```
 
-Execute o programa:
-Salve o código em um arquivo, por exemplo, banco.py, e execute-o com Python:
+## Menu Principal
 
-    python banco.py
+- `[c]` Cadastrar Usuário: Permite cadastrar um novo usuário.
+- `[l]` Logar em Conta: Permite logar na conta de um usuário existente usando o CPF.
+- `[q]` Sair: Encerra o programa.
 
-Interaja com o menu:
-Você verá o seguinte menu de opções:
+## Menu de Conta
 
-    [d] Depositar
-    [s] Sacar
-    [e] Extrato
-    [q] Sair
+- `[d]` Depositar: Permite realizar um depósito na conta logada.
+- `[s]` Sacar: Permite realizar um saque na conta logada.
+- `[e]` Extrato: Exibe o extrato da conta logada.
+- `[v]` Voltar: Retorna ao menu principal.
 
-    =>
+## Estrutura do Código
 
-Digite a letra correspondente à operação que deseja realizar e siga as instruções fornecidas pelo programa.
+### Classe `ContaBancaria`
 
-Detalhes das Funcionalidades
+Representa uma conta bancária com saldo, limite de saque, número de saques e extrato.
 
-Depositar: Quando a opção d é selecionada, o programa solicitará que você insira o valor do depósito.
-O valor deve ser maior que R$0. Valores inválidos serão rejeitados.
+#### Métodos
 
-Sacar: Quando a opção s é selecionada, o programa solicitará que você insira o valor do saque.
+- `print_extrato()`: Exibe o extrato da conta.
+- `get_error(valor)`: Verifica se há erros em uma operação de saque.
+- `saque(valor)`: Realiza um saque na conta.
+- `depositar(valor)`: Realiza um depósito na conta.
 
-Restrições: O valor do saque deve ser maior que R$0 e menor ou igual a R$500.
-O número de saques permitidos por dia é limitado a 3.
-Você não pode sacar mais do que o saldo disponível na conta.
+### Classe `Usuario`
 
-Extrato: Quando a opção e é selecionada, o programa exibirá o saldo atual e o histórico de transações formatado em uma tabela.
+Representa um usuário do banco com nome, CPF e uma conta bancária.
 
-Sair: Quando a opção q é selecionada, o programa será encerrado.
+### Funções
 
-Contribuições
-Sinta-se à vontade para abrir issues e enviar pull requests para melhorar este projeto. Feedback e sugestões são sempre bem-vindos!
+- `cadastrar_usuario(usuarios)`: Cadastra um novo usuário.
+- `selecionar_usuario(usuarios)`: Seleciona um usuário existente pelo CPF.
+- `main()`: Função principal que gerencia o menu e a interação com o usuário.
+
+## Exemplo de Uso
+
+1. No menu principal, selecione `[c]` para cadastrar um novo usuário.
+2. Informe o nome e CPF do usuário.
+3. No menu principal, selecione `[l]` para logar na conta do usuário.
+4. No menu de conta, selecione `[d]` para depositar, `[s]` para sacar, `[e]` para exibir o extrato, ou `[v]` para voltar ao menu principal.
+
+## Autor
+
+Desenvolvido por clerdomy zidor.
+
+## Licença
+
+Este projeto está licenciado sob a [MIT License](LICENSE).
